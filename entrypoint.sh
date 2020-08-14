@@ -13,16 +13,16 @@ if [ $INPUT_WORKING_DIRECTORY != '.' ]; then
 fi
 
 echo ${INPUT_CMD0}
-commands[0]="$(echo ${INPUT_CMD0})"
-commands[1]="$(echo ${INPUT_CMD1})"
-commands[2]="$(echo ${INPUT_CMD2})"
-commands[3]="$(echo ${INPUT_CMD3})"
-commands[4]="$(echo ${INPUT_CMD4})"
-commands[5]="$(echo ${INPUT_CMD5})"
-commands[6]="$(echo ${INPUT_CMD6})"
-commands[7]="$(echo ${INPUT_CMD7})"
-commands[8]="$(echo ${INPUT_CMD8})"
-commands[9]="$(echo ${INPUT_CMD9})"
+commands[0]="${INPUT_CMD0}"
+commands[1]="${INPUT_CMD1}"
+commands[2]="${INPUT_CMD2}"
+commands[3]="${INPUT_CMD3}"
+commands[4]="${INPUT_CMD4}"
+commands[5]="${INPUT_CMD5}"
+commands[6]="${INPUT_CMD6}"
+commands[7]="${INPUT_CMD7}"
+commands[8]="${INPUT_CMD8}"
+commands[9]="${INPUT_CMD9}"
 
 for ((i = 0; i < ${#commands[@]}; i++))
 do
