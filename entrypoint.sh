@@ -5,7 +5,12 @@ set -e
 echo "Authentication using API Key"
 
 echo "jfrog rt c action-server --interactive=false --url=$INPUT_URL --apikey=$INPUT_APIKEY"
-jfrog rt c action-server --interactive=false --url=$INPUT_URL --apikey=$INPUT_APIKEY
+jfrog rt c action-server \
+  --interactive=false \
+  --basic-auth-only=true \
+  --url=$INPUT_URL \
+  --apikey=$INPUT_APIKEY
+
 echo "jfrog rt use action-server"
 jfrog rt use action-server
 
