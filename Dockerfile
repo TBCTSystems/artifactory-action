@@ -9,7 +9,7 @@ LABEL "com.github.actions.description"="Run jFrog CLI commands"
 LABEL "com.github.actions.icon"="check"
 LABEL "com.github.actions.color"="green"
 
-RUN apk add curl
+RUN apk add curl bash
 RUN apk add nodejs npm
 
 # TODO: Cache our own version of this in Artifactory and pull it down?
@@ -19,4 +19,4 @@ RUN curl -fL https://getcli.jfrog.io | sh \
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash /entrypoint.sh"]
