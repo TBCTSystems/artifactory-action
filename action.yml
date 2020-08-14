@@ -1,0 +1,52 @@
+name: "jFrog CLI for Artifactory"
+author: "TBCTs"
+description: "Run jFrog CLI commands for Artifactory"
+inputs:
+  url:
+    description: "URL of Artifactory instance"
+    required: true
+  apikey:
+    description: "Artifactory API Key. Must be supplied when credentials type is apikey"
+    required: true
+  working directory:
+    description: "Specify a working directory for the command to run in."
+    required: false
+    default: .
+  cmd0:
+    description: "A command you want to run, without `jfrog rt`"
+    required: true
+  cmd1:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
+  cmd2:
+    description: "The command you want to run, without `jfrog rt`"
+    required: false
+  cmd3:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
+  cmd4:
+    description: "The command you want to run, without `jfrog rt`"
+    required: false
+  cmd5:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
+  cmd6:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
+  cmd7:
+    description: "The command you want to run, without `jfrog rt`"
+    required: false
+  cmd8:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
+  cmd9:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
+branding:
+  icon: "package"
+  color: "green"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - "'${{ inputs.cmd0 }}' '${{ inputs.cmd1 }}' '${{ inputs.cmd2 }}' '${{ inputs.cmd3 }}' '${{ inputs.cmd4 }}' '${{ inputs.cmd5 }}' '${{ inputs.cmd6 }}' '${{ inputs.cmd7 }}' '${{ inputs.cmd8 }}' '${{ inputs.cmd9 }}'"
