@@ -4,6 +4,7 @@ set -e
 
 echo "Authentication using API Key"
 
+echo "jfrog rt c action-server --interactive=false --url=$INPUT_URL --apikey=$INPUT_APIKEY"
 sh -c "jfrog rt c action-server --interactive=false --url=$INPUT_URL --apikey=$INPUT_APIKEY"
 sh -c "jfrog rt use action-server"
 
@@ -28,7 +29,7 @@ for ((i = 0; i < ${#commands[@]}; i++))
 do
   cmd="${commands[$i]}"
   if [ ! -z "${cmd}" ]; then
-    echo "Running: '$cmd'"
+    echo "Running: jfrog rt $cmd"
     if sh -c "jfrog rt $cmd"; then
       echo "Success!"
     else
