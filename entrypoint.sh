@@ -12,6 +12,7 @@ if [ $INPUT_WORKING_DIRECTORY != '.' ]; then
   cd $INPUT_WORKING_DIRECTORY
 fi
 
+commands=()
 commands[0]="${INPUT_CMD0}"
 commands[1]="${INPUT_CMD1}"
 commands[2]="${INPUT_CMD2}"
