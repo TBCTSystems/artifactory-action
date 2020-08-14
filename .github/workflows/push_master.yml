@@ -21,11 +21,3 @@ jobs:
           version_file: ./VERSION
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # Tag the new version
-      - name: Tag Repo
-        uses: richardsimko/github-tag-action@master
-        with:
-          tag_name: ${{ steps.version.outputs.version }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
