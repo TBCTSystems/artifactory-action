@@ -48,5 +48,3 @@ branding:
 runs:
   using: "docker"
   image: "Dockerfile"
-  args:
-    - "'${{ inputs.cmd0 }}' '${{ inputs.cmd1 }}' '${{ inputs.cmd2 }}' '${{ inputs.cmd3 }}' '${{ inputs.cmd4 }}' '${{ inputs.cmd5 }}' '${{ inputs.cmd6 }}' '${{ inputs.cmd7 }}' '${{ inputs.cmd8 }}' '${{ inputs.cmd9 }}'"

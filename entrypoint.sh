@@ -12,16 +12,28 @@ if [ $INPUT_WORKING_DIRECTORY != '.' ]; then
   cd $INPUT_WORKING_DIRECTORY
 fi
 
-# Log command for info
-echo "[Info] jfrog rt $*"
+commands[0]=${INPUT_CMD0}
+commands[1]=${INPUT_CMD1}
+commands[2]=${INPUT_CMD2}
+commands[3]=${INPUT_CMD3}
+commands[4]=${INPUT_CMD4}
+commands[5]=${INPUT_CMD5}
+commands[6]=${INPUT_CMD6}
+commands[7]=${INPUT_CMD7}
+commands[8]=${INPUT_CMD8}
+commands[9]=${INPUT_CMD9}
 
-for cmd in "$@"; do
-  echo "Running: '$cmd'"
-  if sh -c "jfrog rt $cmd"; then
-    echo "Success!"
-  else
-    exit_code=$?
-    echo "Failure: '$cmd' exited with $exit_code"
-    exit $exit_code
+for ((i = 0; i < ${#commands[@]}; i++))
+do
+  cmd="${commands[$i]}"
+  if [ ! -z "${cmd}" ]; then
+    echo "Running: '$cmd'"
+    if sh -c "jfrog rt $cmd"; then
+      echo "Success!"
+    else
+      exit_code=$?
+      echo "Failure: '$cmd' exited with $exit_code"
+      exit $exit_code
+    fi
   fi
 done
