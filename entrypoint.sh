@@ -2,12 +2,9 @@
 
 set -e
 
-echo "Authentication using $INPUT_CREDENTIALS_TYPE"
+echo "Authentication using API Key"
 
-# Authenticate to the server
-elif [ $INPUT_CREDENTIALS_TYPE == "apikey" ]; then
-  sh -c "jfrog rt c action-server --interactive=false --url=$INPUT_URL --apikey=$INPUT_APIKEY"
-fi
+sh -c "jfrog rt c action-server --interactive=false --url=$INPUT_URL --apikey=$INPUT_APIKEY"
 sh -c "jfrog rt use action-server"
 
 # Set working directory if specified
