@@ -5,8 +5,9 @@ set -e
 echo "Authentication using API Key"
 
 echo "jfrog rt c action-server --interactive=false --url=$INPUT_URL --apikey=$INPUT_APIKEY"
-sh -c "jfrog rt c action-server --interactive=false --url=$INPUT_URL --apikey=$INPUT_APIKEY"
-sh -c "jfrog rt use action-server"
+jfrog rt c action-server --interactive=false --url=$INPUT_URL --apikey=$INPUT_APIKEY
+echo "jfrog rt use action-server"
+jfrog rt use action-server
 
 # Set working directory if specified
 if [ $INPUT_WORKING_DIRECTORY != '.' ]; then
@@ -30,12 +31,6 @@ do
   cmd="${commands[$i]}"
   if [ ! -z "${cmd}" ]; then
     echo "Running: jfrog rt $cmd"
-    if sh -c "jfrog rt $cmd"; then
-      echo "Success!"
-    else
-      exit_code=$?
-      echo "Failure: '$cmd' exited with $exit_code"
-      exit $exit_code
-    fi
+    jfrog rt $cmd
   fi
 done
