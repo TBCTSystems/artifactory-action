@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: build
+        run: docker build . --file Dockerfile --tag tbct/artifactory-jfrog-cli:latest
+
+      - name: Bump version
+        uses: remorses/bump-version@js
+        with:
+          version_file: ./VERSION
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          ignore: .github README.md
