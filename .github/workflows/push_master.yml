@@ -14,10 +14,10 @@ jobs:
       - name: build
         run: docker build . --file Dockerfile --tag tbct/artifactory-jfrog-cli:latest
 
-      - name: Bump version
-        uses: remorses/bump-version@js
-        id: version
-        with:
-          version_file: ./VERSION
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Bump version
+      #   uses: remorses/bump-version@js
+      #   id: version
+      #   with:
+      #     version_file: ./VERSION
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
