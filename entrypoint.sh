@@ -41,6 +41,6 @@ do
   cmd="${commands[$i]}"
   if [ ! -z "${cmd}" ]; then
     echo "Running: jfrog rt $cmd"
-    jfrog rt $cmd
+    sh -c "jfrog rt $cmd"
   fi
 done
