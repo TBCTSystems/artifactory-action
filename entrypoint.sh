@@ -31,6 +31,11 @@ commands[7]=${INPUT_CMD7}
 commands[8]=${INPUT_CMD8}
 commands[9]=${INPUT_CMD9}
 
+echo "PATH"
+pwd
+echo "Contents"
+ls -la
+
 for ((i = 0; i < ${#commands[@]}; i++))
 do
   cmd="${commands[$i]}"
