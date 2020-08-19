@@ -8,7 +8,7 @@ Runs all jFrog CLI commands for artifactory. This will prefix any arguments pass
 
 - `url` - *Required* URL to your Artifactor instance
 - `apikey`- *Required* Artifactory API Key
-- `working-directory` - *Optional* Speccify a directory to run the CLI from
+- `working_directory` - *Optional* Speccify a directory to run the CLI from
 - `cmd0` - *Required* - jFrog CLI command.  Leave off the `jfrog rt` part
 - `cmd<1-9>` - *Optional* - Additional jFrog CLI commands
 
