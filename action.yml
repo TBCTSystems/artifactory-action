@@ -8,7 +8,7 @@ inputs:
   apikey:
     description: "Artifactory API Key. Must be supplied when credentials type is apikey"
     required: true
-  working-directory:
+  working_directory:
     description: "Specify a working directory for the command to run in."
     required: false
     default: .
