@@ -14,6 +14,7 @@ jfrog rt c action-server \
 echo "jfrog rt use action-server"
 jfrog rt use action-server
 
+echo "GITHUB_WORKSPACE = ${GITHUB_WORKSPACE}"
 echo "INPUT_WORKING_DIRECTORY = ${INPUT_WORKING_DIRECTORY}"
 
 # Set working directory if specified
@@ -51,3 +52,5 @@ echo "ending pwd"
 pwd
 echo "ending ls -l"
 ls -l
+echo "ending ls -l linux-os/"
+ls -l linux-os/
