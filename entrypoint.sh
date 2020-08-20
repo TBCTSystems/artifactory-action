@@ -14,10 +14,17 @@ jfrog rt c action-server \
 echo "jfrog rt use action-server"
 jfrog rt use action-server
 
+echo "INPUT_WORKING_DIRECTORY = ${INPUT_WORKING_DIRECTORY}"
+
 # Set working directory if specified
 if [ $INPUT_WORKING_DIRECTORY != '.' ]; then
   cd $INPUT_WORKING_DIRECTORY
 fi
+
+echo "starting pwd"
+pwd
+echo "starting ls -l"
+ls -l
 
 commands=()
 commands[0]=${INPUT_CMD0}
@@ -39,3 +46,8 @@ do
     sh -c "jfrog rt $cmd"
   fi
 done
+
+echo "ending pwd"
+pwd
+echo "ending ls -l"
+ls -l
