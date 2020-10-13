@@ -42,6 +42,39 @@ inputs:
   cmd9:
     description: "A command you want to run, without `jfrog rt`"
     required: false
+  cmd10:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
+  cmd11:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
+  cmd12:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
+  cmd13:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
+  cmd14:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
+  cmd15:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
+  cmd16:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
+  cmd17:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
+  cmd18:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
+  cmd19:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
+  cmd20:
+    description: "A command you want to run, without `jfrog rt`"
+    required: false
 branding:
   icon: "package"
   color: "green"
