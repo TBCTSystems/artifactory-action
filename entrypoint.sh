@@ -30,6 +30,9 @@ commands[6]=${INPUT_CMD6}
 commands[7]=${INPUT_CMD7}
 commands[8]=${INPUT_CMD8}
 commands[9]=${INPUT_CMD9}
+commands[10]=${INPUT_CMD10}
+commands[11]=${INPUT_CMD11}
+commands[12]=${INPUT_CMD11}
 
 for ((i = 0; i < ${#commands[@]}; i++))
 do
