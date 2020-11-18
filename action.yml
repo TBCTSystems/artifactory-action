@@ -2,6 +2,10 @@ name: "jFrog CLI for Artifactory"
 author: "TBCTs"
 description: "Run jFrog CLI commands for Artifactory"
 inputs:
+  env:
+    description: "Space separated list of environment variables to set, used by build-collect-env"
+    required: false
+    default: ''
   url:
     description: "URL of Artifactory instance"
     required: true

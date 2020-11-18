@@ -19,6 +19,12 @@ if [ $INPUT_WORKING_DIRECTORY != '.' ]; then
   cd $INPUT_WORKING_DIRECTORY
 fi
 
+# Set environment variables if specified
+if [ ! -z "${INPUT_ENV}" ]; then
+  echo "Setting environment $INPUT_ENV"
+  export $INPUT_ENV
+fi
+
 commands=()
 commands[0]=${INPUT_CMD0}
 commands[1]=${INPUT_CMD1}
