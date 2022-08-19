@@ -4,15 +4,15 @@ set -e
 
 echo "Authentication using API Key"
 
-echo "jfrog rt c action-server --interactive=false --basic-auth-only=true --url=$INPUT_URL --apikey=$INPUT_APIKEY"
-jfrog rt c action-server \
+echo "jfrog config action-server --interactive=false --basic-auth-only=true --artifactory-url=$INPUT_URL --apikey=$INPUT_APIKEY"
+jfrog config add action-server \
   --interactive=false \
   --basic-auth-only=true \
-  --url=$INPUT_URL \
+  --artifactory-url=$INPUT_URL \
   --apikey=$INPUT_APIKEY
 
-echo "jfrog rt use action-server"
-jfrog rt use action-server
+echo "jfrog config use action-server"
+jfrog config use action-server
 
 # Set working directory if specified
 if [ $INPUT_WORKING_DIRECTORY != '.' ]; then
@@ -52,7 +52,7 @@ for ((i = 0; i < ${#commands[@]}; i++))
 do
   cmd="${commands[$i]}"
   if [ ! -z "${cmd}" ]; then
-    echo "Running: jfrog rt $cmd"
-    sh -c "jfrog rt $cmd"
+    echo "Running: jfrog config $cmd"
+    sh -c "jfrog config $cmd"
   fi
 done
