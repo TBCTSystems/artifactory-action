@@ -1,3 +1,8 @@
+# 🚀 Archived Repository 🚀
+
+⚠️ **This repository has been archived.**  
+Please use https://github.com/TBCTSystems/bct-embedded-linux as an example of how to directly use the JFrog cli.
+
 # GitHub Action for jFrog CLI for Artifactory
 
 Runs all jFrog CLI commands for artifactory. This will prefix any arguments passed with `jfrog rt`.
